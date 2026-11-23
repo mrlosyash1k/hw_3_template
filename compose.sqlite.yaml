@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:${APP_PORT:-8080}:8000"
+    environment:
+      GREETING: "${GREETING:-Hello from Compose!}"
+    volumes:
+      - counter-data:/data
+
+volumes:
+  counter-data:
